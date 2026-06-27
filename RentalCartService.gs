@@ -123,7 +123,9 @@ function getRentalCartCount(cartId) {
         agreementNumber: data[i][0],
         cartId: data[i][1],
         itemId: data[i][2],
-        timeAdded: data[i][3]
+        timeAdded: data[i][3],
+        category: data[i][4],
+        quantity: data[i][5]
       });
 
     }
@@ -132,4 +134,53 @@ function getRentalCartCount(cartId) {
 
   return cart;
 
+}
+function confirmBulkItemInRentalCart(cartData) {
+  cartData = cartData || {};
+
+  const sheet = SpreadsheetApp
+    .getActiveSpreadsheet()
+    .getSheetByName("Rental Cart");
+
+  if (!cartData.agreementNumber) {
+    throw new Error("Agreement number is required.");
+  }
+
+  if (!cartData.cartId) {
+    throw new Error("Cart ID is required.");
+  }
+
+  if (!cartData.category) {
+    throw new Error("Category is required.");
+  }
+
+  if (!cartData.quantity) {
+    throw new Error("Quantity is required.");
+  }
+
+  sheet.appendRow([
+    cartData.agreementNumber,
+    cartData.cartId,
+    "BULK-" + cartData.category,
+    new Date(),
+    cartData.category,
+    Number(cartData.quantity)
+  ]);
+
+  return {
+    confirmed: true,
+    category: cartData.category,
+    quantity: Number(cartData.quantity),
+    message: cartData.quantity + " " + cartData.category + " confirmed."
+  };
+}
+function testConfirmBulkLinens() {
+  const result = confirmBulkItemInRentalCart({
+    agreementNumber: "BW-TEST-0001",
+    cartId: "CART-001",
+    category: "Linens",
+    quantity: 6
+  });
+
+  Logger.log(result);
 }
