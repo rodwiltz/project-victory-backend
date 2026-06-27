@@ -79,3 +79,49 @@ function getInventoryCategory(itemId) {
 
   return item.values[categoryCol];
 }
+function updateInventoryStatus(itemId, status, agreementNumber, location) {
+
+  const sheet = SpreadsheetApp
+    .getActiveSpreadsheet()
+    .getSheetByName("Inventory");
+
+  const data = sheet.getDataRange().getValues();
+
+  for (let i = 1; i < data.length; i++) {
+
+    if (data[i][0] === itemId) {
+
+      // Status
+      sheet.getRange(i + 1, 5).setValue(status);
+
+      // Current Agreement
+      sheet.getRange(i + 1, 7).setValue(agreementNumber || "");
+
+      // Location
+      sheet.getRange(i + 1, 6).setValue(location || "");
+
+      return {
+        success: true,
+        itemId: itemId,
+        status: status
+      };
+    }
+  }
+
+  return {
+    success: false,
+    message: "Item not found: " + itemId
+  };
+}
+function testUpdateInventoryStatus() {
+
+  const result = updateInventoryStatus(
+    "RECT1",
+    "Checked Out",
+    "BW-TEST-0001",
+    "Customer"
+  );
+
+  Logger.log(result);
+
+}
