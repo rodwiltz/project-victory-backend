@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+
+<body style="font-family:Arial;text-align:center;background:#f4f6f8;padding:18px;">
+
+<div style="background:white;max-width:430px;margin:auto;padding:22px;border-radius:16px;box-shadow:0 3px 14px rgba(0,0,0,.12);">
+
+  <h1>Inventory Return</h1>
+
+  <div id="start">
+    <p>Enter your agreement number, then scan each item you are returning.</p>
+    <input id="agreement" placeholder="Agreement / Order Number" style="width:90%;padding:14px;margin:8px;font-size:16px;">
+    <input id="customer" placeholder="Customer Name Optional" style="width:90%;padding:14px;margin:8px;font-size:16px;">
+    <button onclick="continueToCamera()" style="width:90%;padding:14px;margin:8px;font-size:16px;">Continue</button>
+  </div>
+
+  <div id="cameraIntro" style="display:none;">
+    <p><b>Camera Access Required</b></p>
+    <p>This app uses your camera to scan QR codes on rental items.</p>
+    <button onclick="startScanner()" style="width:90%;padding:14px;margin:8px;font-size:16px;">Enable Camera</button>
+    <div id="cameraError"></div>
+  </div>
+
+  <div id="scannerArea" style="display:none;">
+    <p id="agreementText"></p>
+    <h2><span id="count">0</span> Items Returned</h2>
+    <div id="reader" style="width:100%;"></div>
+    <p id="status">Ready to scan</p>
+    <div id="list" style="text-align:left;line-height:1.7;"></div>
+    <button onclick="finish()" style="width:90%;padding:14px;margin:8px;font-size:16px;">Done</button>
+  </div>
+
+  <div id="done" style="display:none;">
+    <h2>Thank You</h2>
+    <p>Your return has been recorded.</p>
+    <h2><span id="finalCount">0</span> Items</h2>
+  </div>
+
+</div>
+
+<script>
+let agreement = "";
+let customer = "";
+let sessionId = "";
+let scanner = null;
+let scanned = new Set();
+let saving = false;
+
+function show(id) {
+  ["start", "cameraIntro", "scannerArea", "done"].forEach(function(x) {
+    document.getElementById(x).style.display = x === id ? "block" : "none";
+  });
+}
+
+function continueToCamera() {
+  agreement = document.getElementById("agreement").value.trim();
+  customer = document.getElementById("customer").value.trim();
+
+  if (!agreement) {
+    alert("Please enter your agreement or order number.");
+    return;
+  }
+
+  sessionId = "R-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+  show("cameraIntro");
+}
+
+function startScanner() {
+  document.getElementById("cameraError").innerHTML = "";
+  document.getElementById("agreementText").innerText = "Agreement: " + agreement;
+  show("scannerArea");
+
+  scanner = new Html5Qrcode("reader");
+
+  Html5Qrcode.getCameras()
+    .then(function(cameras) {
+      if (!cameras || cameras.length === 0) {
+        throw new Error("No camera found.");
+      }
+
+      const cameraId = cameras[cameras.length - 1].id;
+
+      return scanner.start(
+        cameraId,
+        {
+          fps: 10,
+          qrbox: 250
+        },
+        onScanSuccess
+      );
+    })
+    .catch(function(error) {
+      show("cameraIntro");
+
+      document.getElementById("cameraError").innerHTML =
+        "<p style='color:red;font-weight:bold;'>Camera access was blocked.</p>" +
+        "<p>Please open this page directly in Safari or Chrome, not inside another app.</p>" +
+        "<p>Then allow camera access and tap Enable Camera again.</p>";
+    });
+}
+
+function onScanSuccess(decodedText) {
+  const itemId = decodedText.trim();
+
+  if (!itemId || saving) return;
+
+  if (scanned.has(itemId)) {
+    document.getElementById("status").innerHTML =
+      "<span style='color:red;'>Already scanned: " + itemId + "</span>";
+    return;
+  }
+
+  saving = true;
+  document.getElementById("status").innerText = "Saving " + itemId + "...";
+
+  google.script.run
+    .withSuccessHandler(function(message) {
+      scanned.add(itemId);
+      saving = false;
+
+      document.getElementById("count").innerText = scanned.size;
+      document.getElementById("status").innerHTML =
+        "<span style='color:green;font-weight:bold;'>" + message + "</span>";
+      document.getElementById("list").innerHTML += "✅ " + itemId + "<br>";
+
+      if (navigator.vibrate) navigator.vibrate(150);
+    })
+    .withFailureHandler(function(error) {
+      saving = false;
+      document.getElementById("status").innerHTML =
+        "<span style='color:red;'>Error: " + error.message + "</span>";
+    })
+    .recordReturnScan({
+      agreementNumber: agreement,
+      customerName: customer,
+      itemId: itemId,
+      sessionId: sessionId
+    });
+}
+
+function finish() {
+  if (scanner) {
+    scanner.stop().catch(function() {});
+  }
+
+  document.getElementById("finalCount").innerText = scanned.size;
+  show("done");
+}
+</script>
+
+</body>
+</html>
