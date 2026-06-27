@@ -29,20 +29,20 @@ function getRequirementStatus(agreementNumber) {
     let loadedQty = 0;
 
     for (let j = 0; j < cart.length; j++) {
-      const category = getInventoryCategory(cart[j].itemId);
+      let category = getInventoryCategory(cart[j].itemId);
+let quantity = 1;
 
-      Logger.log(
-        "Cart item: " +
-        cart[j].itemId +
-        " | Inventory category: " +
-        category +
-        " | Required category: " +
-        requirements[i].category
-      );
+if (!category && cart[j].category) {
+  category = cart[j].category;
+  quantity = Number(cart[j].quantity);
+}
 
-      if (category === requirements[i].category) {
-        loadedQty++;
-      }
+if (category === requirements[i].category) {
+  loadedQty += quantity;
+}
+
+      
+      
     }
 
     status.push({
