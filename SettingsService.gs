@@ -24,3 +24,15 @@ function updateSetting(settingName, newValue) {
 
   throw new Error("Setting not found: " + settingName);
 }
+const STATUS = {
+  AVAILABLE: "Available",
+  CHECKED_OUT: "Checked Out",
+  RETURNED: "Returned",
+  REPAIR: "Repair",
+  LOST: "Lost"
+};
+
+const LOCATION = {
+  HOME: "Home",
+  CUSTOMER: "Customer"
+};
