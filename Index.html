@@ -12,17 +12,7 @@
 
   <h1>Inventory Return</h1>
 
-  <div id="start">
-    <p>Enter your agreement number, then scan each item you are returning.</p>
-    <input id="agreement" placeholder="Agreement / Order Number" style="width:90%;padding:14px;margin:8px;font-size:16px;">
-    <input id="customer" placeholder="Customer Name Optional" style="width:90%;padding:14px;margin:8px;font-size:16px;">
-    <button onclick="continueToCamera()" style="width:90%;padding:14px;margin:8px;font-size:16px;">Continue</button>
-
-<button onclick="showOperationsConsole()" style="width:90%;padding:14px;margin:8px;font-size:16px;background:#111;color:white;">
-  Customer Journey Preview
-</button>
-
-  </div>
+  <?!= include('Journey'); ?>
 
   <div id="cameraIntro" style="display:none;">
     <p><b>Camera Access Required</b></p>
@@ -105,7 +95,7 @@
 </div>
 
 </div>
-<?!= include('Journey'); ?>
+
 <script>
 let agreement = "";
 let customer = "";
