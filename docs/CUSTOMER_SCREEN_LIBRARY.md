@@ -1261,3 +1261,187 @@ This screen exists to close the pickup experience with confidence.
 The customer should leave thinking:
 
 > "That was easier than expected."
+
+---
+
+# CS-05 — Return Your Rental
+
+**Journey Stage:** Return Invitation
+
+**Status:** Approved for Sprint 8
+
+---
+
+# Purpose
+
+The "Return Your Rental" screen guides the customer through returning every assigned rental item.
+
+It mirrors the pickup experience so the customer does not need to learn a new process.
+
+The screen should quietly lead the customer one return task at a time.
+
+---
+
+# Customer Goal
+
+Return every rental item confidently.
+
+---
+
+# Customer Mindset
+
+The customer is finished with their event and is ready to return the rental.
+
+They may be tired, busy, or distracted.
+
+They should not have to remember how the pickup process worked.
+
+The return process should feel familiar immediately.
+
+---
+
+# Success Criteria
+
+The customer returns all assigned rental items without assistance.
+
+The backend confirms completion automatically.
+
+---
+
+# Entry Conditions
+
+Customer opens their secure return invitation.
+
+The rental has been validated.
+
+Return items have been retrieved.
+
+The camera is available and automatically active.
+
+---
+
+# Exit Conditions
+
+All assigned return items have been scanned.
+
+The backend confirms return completion.
+
+Application automatically transitions to **CS-06 — Everything Returned**.
+
+---
+
+# Required Information
+
+## Heading
+
+**Return Your Rental**
+
+---
+
+## Supporting Copy
+
+Scan each item as you return it.
+
+---
+
+## Current Task
+
+Display only the current return task.
+
+Example:
+
+**Return Tables**
+
+**6 Remaining**
+
+---
+
+## Live Camera Workspace
+
+The live camera opens automatically.
+
+The customer never enters a separate scanner mode.
+
+---
+
+## Need Help
+
+Provide a subtle **Need Help?** action.
+
+---
+
+# Visual Hierarchy
+
+1. Heading
+2. Current task
+3. Remaining quantity
+4. Live camera workspace
+5. Help
+
+---
+
+# Interaction Rules
+
+Successful scans update the remaining quantity immediately.
+
+Completed categories automatically advance to the next category.
+
+Return completion is detected by the backend.
+
+No manual finish button should be shown.
+
+---
+
+# Scan Feedback
+
+## Successful Scan
+
+✓ Item Returned
+
+---
+
+## Duplicate Scan
+
+Already returned.
+
+Continue returning.
+
+---
+
+## Incorrect Item
+
+This item isn't part of your rental.
+
+Set it aside and continue returning your remaining items.
+
+---
+
+## Camera Unavailable
+
+We couldn't access your camera.
+
+Please check your camera permissions.
+
+Primary Action:
+
+**Contact Big W**
+
+Manual item entry is intentionally not supported.
+
+---
+
+# Engineering Notes
+
+Return mirrors pickup.
+
+The frontend presents backend-provided return tasks and scan results.
+
+The frontend never determines return completion.
+
+---
+
+# Why This Screen Exists
+
+This screen exists to make returning feel just as easy as pickup.
+
+The customer should not need to relearn the system.
