@@ -751,3 +751,435 @@ The customer should only think about one thing:
 > "This looks simple."
 
 If the customer reaches the next screen believing the process will be easy, this screen has fulfilled its purpose.
+# DESIGN_DECISIONS.md
+
+**Project:** Big W Events Self-Service Platform
+
+This document records major product and UX decisions that define the Big W customer experience.
+
+Future design decisions should remain consistent with these principles unless intentionally superseded.
+
+---
+
+# DD-001 — Focus Beats Progress
+
+**Decision**
+
+Customers should always see their next task before they see overall progress.
+
+**Reasoning**
+
+Progress is informative.
+
+Focus is actionable.
+
+By highlighting only the current task, customers spend less time interpreting the interface and more time completing their rental.
+
+---
+
+# DD-002 — The Software Quietly Leads
+
+**Decision**
+
+The interface should always know what the customer needs to do next and confidently present only that action.
+
+**Reasoning**
+
+Customers should never need to decide what comes next.
+
+The system quietly guides them from one completed task to the next.
+
+---
+
+# DD-003 — Eliminate Redundant Instructions
+
+**Decision**
+
+If the interface already communicates the next action, supporting instructional text should be removed.
+
+**Reasoning**
+
+Additional words increase cognitive load without increasing clarity.
+
+The cleanest interface is the one that communicates through structure instead of explanation.
+
+---
+
+# DD-004 — The Camera Is Part of the Workspace
+
+**Decision**
+
+QR scanning is not a separate mode or screen.
+
+The live camera is always available while the customer is actively loading or returning rental items.
+
+**Reasoning**
+
+Removing transitions keeps customers focused on their work instead of the software.
+
+---
+
+# DD-005 — Mistake-Proof by Design
+
+**Decision**
+
+Whenever possible, the system should prevent customer mistakes rather than asking customers to recover from them.
+
+**Examples**
+
+* Scan instead of typing
+* Automatic completion
+* No manual inventory identification
+* Automatic progression between tasks
+
+---
+
+# DD-006 — One Screen. One Question.
+
+**Decision**
+
+Every screen should answer one primary customer question.
+
+**Examples**
+
+CS-01 — Am I in the right place?
+
+CS-02 — What happens next?
+
+CS-03 — What should I do right now?
+
+Future screens should follow the same philosophy.
+
+---
+
+# DD-007 — The Software Disappears Behind the Work
+
+**Decision**
+
+The customer should focus on loading their rental—not operating software.
+
+**Reasoning**
+
+Technology should quietly support the task rather than become the task itself.
+
+# CS-03 — Pick Up Your Rental
+
+**Journey Stage:** Guided Pickup
+
+**Status:** Approved for Sprint 8
+
+---
+
+# Purpose
+
+The "Pick Up Your Rental" screen is the primary working screen of the Big W Events self-service experience.
+
+Its purpose is to quietly guide the customer through loading every assigned rental item without requiring them to decide what to do next.
+
+This screen replaces traditional inventory management with a guided task experience.
+
+The software should feel less like an application and more like a calm employee standing beside the customer.
+
+---
+
+# Customer Goal
+
+Load every assigned rental item.
+
+---
+
+# Customer Mindset
+
+The customer has arrived at the pickup location and is ready to begin loading.
+
+At this moment they should never wonder:
+
+* What should I load first?
+* Did that scan work?
+* What happens when I'm finished?
+
+The interface should answer these questions naturally through its design.
+
+---
+
+# Success Criteria
+
+The customer completes pickup without assistance.
+
+The customer never manually marks pickup as complete.
+
+The backend automatically recognizes completion and advances to the next screen.
+
+---
+
+# Entry Conditions
+
+Customer selected **Continue** from CS-02.
+
+The reservation has already been validated.
+
+Assigned rental categories and quantities have been retrieved.
+
+The device camera is available and automatically active.
+
+---
+
+# Exit Conditions
+
+All assigned rental items have been successfully scanned.
+
+The backend confirms completion.
+
+The application automatically transitions to **CS-04 — Ready for Your Event**.
+
+---
+
+# Required Information
+
+## Illustration Header
+
+Display the Big W shield illustration.
+
+Purpose:
+
+Reinforce confidence without distracting from the customer's work.
+
+---
+
+## Heading
+
+**Pick Up Your Rental**
+
+---
+
+## Supporting Copy
+
+**Scan each item as you load it.**
+
+---
+
+## Current Task
+
+Display only the customer's current task.
+
+Example:
+
+**Load Tables**
+
+**6 Remaining**
+
+Only one task should ever receive visual emphasis.
+
+Future tasks remain hidden until they become relevant.
+
+---
+
+## Live Camera Workspace
+
+The live camera opens automatically.
+
+The customer never enters a separate scanner mode.
+
+The camera exists as part of the workspace—not as a separate feature.
+
+---
+
+## Need Help
+
+Provide a subtle **Need Help?** action.
+
+Help should always remain secondary to the primary workflow.
+
+---
+
+# Visual Hierarchy
+
+1. Shield illustration
+2. Heading
+3. Current task
+4. Remaining quantity
+5. Live camera workspace
+6. Help
+
+The customer's eye should naturally flow toward the next item requiring action.
+
+---
+
+# Interaction Rules
+
+Successful scan:
+
+* Remaining quantity updates immediately.
+* Brief confirmation appears.
+* Confirmation disappears automatically.
+
+Category complete:
+
+* Current task displays a completed state.
+* Next task automatically becomes the current task.
+* No customer interaction required.
+
+Pickup complete:
+
+* Application automatically advances to CS-04.
+
+---
+
+# Scan Feedback
+
+## Successful Scan
+
+✓ Item Added
+
+Display briefly.
+
+Dismiss automatically.
+
+---
+
+## Duplicate Scan
+
+Already scanned.
+
+Continue loading.
+
+---
+
+## Incorrect Item
+
+This item isn't part of your rental.
+
+Set it aside and continue loading your remaining items.
+
+---
+
+## Camera Unavailable
+
+We couldn't access your camera.
+
+Please check your camera permissions.
+
+Primary Action:
+
+**Contact Big W**
+
+Manual item entry is intentionally not supported.
+
+---
+
+# Screen States
+
+## Loading
+
+Retrieve assigned rental information.
+
+Prepare camera automatically.
+
+---
+
+## Active
+
+Display current task and live camera.
+
+---
+
+## Task Complete
+
+Automatically transition focus to the next task.
+
+---
+
+## Pickup Complete
+
+Automatically transition to CS-04.
+
+---
+
+## Error
+
+Display calm, human language.
+
+Offer one clear recovery action.
+
+Never expose technical terminology.
+
+---
+
+# Accessibility
+
+* Large touch targets.
+* High-contrast typography.
+* Screen reader announcements for successful scans.
+* Camera workspace remains unobstructed.
+* All confirmations include both visual and text feedback.
+
+---
+
+# Engineering Notes
+
+The frontend is responsible only for presentation.
+
+Business logic remains entirely within the backend.
+
+The frontend receives:
+
+* Current task
+* Remaining quantity
+* Scan validation result
+* Completion status
+
+The frontend never determines pickup completion.
+
+---
+
+# Future Enhancements
+
+Potential future improvements include:
+
+* Gentle haptic confirmation after successful scans.
+* Accessibility voice guidance.
+* Offline recovery.
+* Subtle completion animations.
+
+Enhancements should reinforce the workflow without introducing additional decisions.
+
+---
+
+# UX Objectives
+
+This screen should continuously answer four questions.
+
+**What should I do?**
+
+Load the highlighted item.
+
+---
+
+**Did that work?**
+
+Immediate scan confirmation.
+
+---
+
+**What's next?**
+
+The application automatically updates the current task.
+
+---
+
+**How will I know I'm finished?**
+
+Big W Events will automatically recognize completion.
+
+---
+
+# Why This Screen Exists
+
+Customers rent tables and chairs—not software.
+
+This screen exists to remove unnecessary decisions so customers can focus entirely on loading their rental.
+
+The application should quietly lead the customer from one completed task to the next until every assigned item has been loaded.
+
+If the customer completes pickup without ever wondering what to do next, this screen has fulfilled its purpose.
+
