@@ -34,7 +34,7 @@ Used by:
 Components:
 
 - Experience Header
-- Guided Task Card
+- Focus Card
 - Camera Workspace
 - Status Message
 - Secondary Action
@@ -90,7 +90,7 @@ Only the information required to complete the next task should appear here.
 
 **Contains**
 
-* Guided Task Card
+* Focus Card
 
 ---
 
