@@ -938,3 +938,179 @@ The answer should always be immediate, simple, and reassuring.
 Big W believes software should solve problems before people do.
 
 Support Actions exist to ensure that when human assistance becomes necessary, customers always know the next step.
+
+# BC-04 — Guidance Message
+
+## Purpose
+
+The Guidance Message provides timely information that helps the customer understand the current situation and confidently continue the guided experience.
+
+Its purpose is not simply to communicate system status.
+
+Its purpose is to reduce uncertainty.
+
+Every Guidance Message should answer the customer's most immediate question without introducing new decisions or unnecessary complexity.
+
+---
+
+## Used By
+
+All customer-facing templates.
+
+Guidance Messages appear whenever the application needs to:
+
+* Confirm an action
+* Explain a recovery step
+* Clarify an unexpected situation
+* Prepare the customer for the next action
+
+---
+
+## Zone
+
+**Feedback Zone**
+
+The Feedback Zone appears near the component most closely related to the message.
+
+Examples:
+
+* Camera-related guidance appears within the Camera Workspace.
+* Recovery guidance appears alongside recovery actions.
+* Workflow guidance appears near the Focus Card.
+
+Messages should never force customers to search the screen for information.
+
+---
+
+## Behavior
+
+Guidance Messages should be:
+
+* Brief
+* Actionable
+* Calm
+* Contextual
+
+Messages should explain only what the customer needs to know right now.
+
+They should never attempt to teach the entire system.
+
+---
+
+## Message Categories
+
+### Confirmation
+
+Example:
+
+✓ Item Added
+
+Purpose:
+
+Confirm successful interaction without interrupting workflow.
+
+---
+
+### Recovery
+
+Example:
+
+Please allow camera access and tap **Try Again**.
+
+Purpose:
+
+Help the customer recover independently.
+
+---
+
+### Warning
+
+Example:
+
+This item isn't part of your rental.
+
+Purpose:
+
+Prevent mistakes while preserving customer confidence.
+
+---
+
+### Completion
+
+Example:
+
+Tables loaded.
+
+Next:
+
+Load Chairs.
+
+Purpose:
+
+Mark meaningful transitions and redirect customer attention.
+
+---
+
+## Attention Model
+
+Guidance Messages should appear where the customer's attention already exists.
+
+They should support—not compete with—the Focus Card.
+
+Messages should disappear once they have served their purpose.
+
+Persistent messaging should be reserved for recovery situations that require customer action.
+
+---
+
+## Accessibility
+
+* High contrast.
+* Plain language.
+* Screen reader announcements for important state changes.
+* Motion should respect reduced-motion preferences.
+* Never rely on color alone to communicate meaning.
+
+---
+
+## Engineering Notes
+
+Guidance Messages are driven by application events.
+
+The backend determines message type and context.
+
+The frontend determines presentation, timing, and placement.
+
+Guidance Messages should remain independent of workflow logic.
+
+---
+
+## Future Enhancements
+
+Future versions may support:
+
+* Personalized messaging
+* Localized language packs
+* Adaptive messaging based on customer experience level
+
+Future enhancements should improve clarity without increasing message volume.
+
+---
+
+## UX Objectives
+
+Every Guidance Message should answer one question.
+
+**What should I understand right now?**
+
+If the customer immediately understands what happened and what to do next, the message has succeeded.
+
+---
+
+## Why This Component Exists
+
+Customers should never need to interpret the software.
+
+The software should interpret the situation for them.
+
+Guidance Messages quietly explain what matters at exactly the moment it matters, allowing customers to remain focused on completing their rental with confidence.
