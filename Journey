@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    
-  </body>
-</html>
-<div id="journey-placeholder" style="display:none;">
-  Journey Component Loaded Successfully
+<div id="start">
+  <p>Enter your agreement number, then scan each item you are returning.</p>
+  <input id="agreement" placeholder="Agreement / Order Number" style="width:90%;padding:14px;margin:8px;font-size:16px;">
+  <input id="customer" placeholder="Customer Name Optional" style="width:90%;padding:14px;margin:8px;font-size:16px;">
+  <button onclick="continueToCamera()" style="width:90%;padding:14px;margin:8px;font-size:16px;">Continue</button>
+  <button onclick="showOperationsConsole()" style="width:90%;padding:14px;margin:8px;font-size:16px;background:#111;color:white;">
+    Customer Journey Preview
+  </button>
 </div>
