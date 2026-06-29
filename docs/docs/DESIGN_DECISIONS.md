@@ -209,7 +209,7 @@ Reasoning
 
 Purpose-driven names help Design and Engineering think about customer outcomes instead of implementation details.
 
-DD-013 — Progress Should Represent Current Effort
+# DD-013 — Progress Should Represent Current Effort
 
 Not overall completion.
 
@@ -222,3 +222,24 @@ Customers manage one task at a time.
 Overall progress increases cognitive load without improving decision-making.
 
 The Focus Card should visualize only the work associated with the current task.
+# DD-014 — Components Own One Responsibility
+
+**Decision**
+
+Each reusable UI component should have one clearly defined responsibility.
+
+Components should not accumulate unrelated behaviors or compete with neighboring components.
+
+**Reasoning**
+
+Single-purpose components are easier to understand, easier to implement, and easier to evolve.
+
+Examples:
+
+* Experience Header establishes context.
+* Focus Card directs attention.
+* Camera Workspace confirms interaction.
+* Support Actions provides optional assistance.
+
+When a component begins answering multiple unrelated questions, it should be divided into separate components.
+
