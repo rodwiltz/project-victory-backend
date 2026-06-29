@@ -613,3 +613,197 @@ The Focus Card makes that decision for them.
 By reducing every moment to one clearly defined objective, the Focus Card transforms inventory management into a guided customer experience.
 
 It is the component that most clearly represents Big W Events' commitment to calm, confident, self-service.
+
+---
+
+# BC-06 — Camera Workspace
+
+## Purpose
+
+The Camera Workspace provides the live scanning environment used during guided pickup and guided return.
+
+Its purpose is to help customers confidently scan rental items while keeping their attention on the physical work rather than the software.
+
+The Camera Workspace should remain visually quiet and free from unnecessary interface elements.
+
+---
+
+## Used By
+
+**Template B — Guided Work**
+
+* CS-03 — Pick Up Your Rental
+* CS-05 — Return Your Rental
+
+---
+
+## Template
+
+**Guided Work**
+
+---
+
+## Zone
+
+**Interaction Zone**
+
+The Camera Workspace occupies the Interaction Zone immediately beneath the Focus Card.
+
+---
+
+## Behavior
+
+The Camera Workspace automatically activates when the Guided Work screen opens.
+
+Customers should never need to manually enter a scanning mode.
+
+The workspace continuously scans until the current task is complete or the customer exits the experience.
+
+---
+
+## Visual Elements
+
+The Camera Workspace contains:
+
+* Live camera preview
+* Rounded corner scanning guides
+* Temporary scan feedback overlays
+
+No permanent interface elements should obstruct the live camera image.
+
+---
+
+## Scan Feedback
+
+### Successful Scan
+
+Display:
+
+✓ Item Added
+
+The confirmation should appear briefly near the center of the camera preview before fading automatically.
+
+---
+
+### Duplicate Scan
+
+Display:
+
+Already scanned.
+
+Continue loading.
+
+The message should reassure without interrupting the workflow.
+
+---
+
+### Incorrect Item
+
+Display:
+
+This item isn't part of this rental.
+
+Set it aside and continue loading.
+
+The customer should immediately understand that the workflow can continue.
+
+---
+
+### Camera Unavailable
+
+Display:
+
+We couldn't access your camera.
+
+Please check your camera permissions.
+
+Primary Action:
+
+**Contact Big W**
+
+Manual item entry is intentionally not supported.
+
+---
+
+## Attention Model
+
+During scanning, customer attention naturally shifts toward the camera.
+
+Routine scan confirmation should therefore appear within the Camera Workspace.
+
+The Camera Workspace should not celebrate progress or announce category completion.
+
+Those responsibilities belong to the Focus Card.
+
+---
+
+## Accessibility
+
+* Camera guides should remain visible without obscuring QR codes.
+* Scan feedback should be presented visually and through screen reader announcements when appropriate.
+* Motion should respect reduced-motion preferences.
+* Camera permission failures should always provide a clear recovery path.
+
+---
+
+## Engineering Notes
+
+The backend determines scan validity.
+
+The frontend is responsible for:
+
+* Displaying the live camera preview
+* Detecting scan events
+* Presenting scan feedback
+* Maintaining continuous scanning
+
+The Camera Workspace should not determine inventory state or workflow progression.
+
+---
+
+## Future Enhancements
+
+Future versions may support:
+
+* Flashlight control
+* Automatic zoom assistance
+* Improved low-light guidance
+* Multiple camera selection
+
+Enhancements should improve scanning without distracting from the customer's task.
+
+---
+
+## UX Objectives
+
+The Camera Workspace should continuously answer three questions.
+
+**Can the system see my item?**
+
+Yes.
+
+The live preview confirms camera readiness.
+
+---
+
+**Did my scan work?**
+
+Immediate scan feedback confirms the result.
+
+---
+
+**Should I keep scanning?**
+
+Yes.
+
+Unless the Focus Card transitions to a new task.
+
+---
+
+## Why This Component Exists
+
+The customer should never wonder whether the system recognized their scan.
+
+The Camera Workspace quietly confirms each interaction while allowing the customer to remain focused on loading or returning rental items.
+
+It exists to make scanning feel reliable, predictable, and nearly invisible.
