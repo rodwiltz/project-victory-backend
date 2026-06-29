@@ -148,6 +148,8 @@ Big W reduces uncertainty by presenting one clear next step.
 **Decision**
 
 Use subtle positive feedback when the customer's task changes—not after every successful action.
+Camera Workspace → micro feedback
+Focus Card → transition feedback
 
 **Reasoning**
 
@@ -206,3 +208,17 @@ This workflow keeps Design, Engineering, and Product synchronized while reducing
 Reasoning
 
 Purpose-driven names help Design and Engineering think about customer outcomes instead of implementation details.
+
+DD-013 — Progress Should Represent Current Effort
+
+Not overall completion.
+
+Current effort.
+
+Reasoning:
+
+Customers manage one task at a time.
+
+Overall progress increases cognitive load without improving decision-making.
+
+The Focus Card should visualize only the work associated with the current task.
