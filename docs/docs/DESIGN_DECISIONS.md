@@ -189,6 +189,20 @@ Focus Card (not Task Card)
 Camera Workspace (not Scanner)
 Completion Panel (not Success Screen)
 
+# DD-012 — Capture Decisions Immediately
+
+**Decision**
+
+Once a product, design, or architecture decision is approved, it should be documented and committed before continuing the discussion.
+
+**Reasoning**
+
+Important decisions are easiest to lose immediately after they are made, especially during highly collaborative design sessions.
+
+Capturing decisions immediately ensures that GitHub remains the single source of truth and prevents unfinished ideas from depending on memory.
+
+This workflow keeps Design, Engineering, and Product synchronized while reducing the need to reconstruct past decisions.
+
 Reasoning
 
 Purpose-driven names help Design and Engineering think about customer outcomes instead of implementation details.
