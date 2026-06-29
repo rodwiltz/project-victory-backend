@@ -1445,3 +1445,196 @@ The frontend never determines return completion.
 This screen exists to make returning feel just as easy as pickup.
 
 The customer should not need to relearn the system.
+
+# CS-06 — Everything Returned
+
+**Journey Stage:** Agreement Closed
+
+**Status:** Approved for Sprint 8
+
+---
+
+# Purpose
+
+The "Everything Returned" screen closes the customer journey.
+
+Its purpose is to reassure the customer that every assigned rental item has been successfully returned and that their self-service experience is complete.
+
+The experience should end with confidence rather than celebration.
+
+---
+
+# Customer Goal
+
+Know that the return is complete.
+
+---
+
+# Customer Mindset
+
+The customer has finished returning their rental.
+
+They want confirmation that everything has been received.
+
+They should leave feeling relieved, not uncertain.
+
+---
+
+# Success Criteria
+
+The customer confidently leaves the return location without wondering whether anything was missed.
+
+---
+
+# Entry Conditions
+
+All assigned return items have been successfully scanned.
+
+The backend confirms return completion.
+
+---
+
+# Exit Conditions
+
+Customer closes the experience.
+
+No further action is required.
+
+---
+
+# Required Information
+
+## Illustration
+
+Display a calm Big W illustration featuring the shield and a subtle completion checkmark.
+
+---
+
+## Heading
+
+**Everything Returned**
+
+---
+
+## Supporting Copy
+
+Thank you for choosing Big W Events.
+
+We hope to be part of your next celebration.
+
+---
+
+## Primary Action
+
+Done
+
+---
+
+# Optional Information
+
+Future versions may include:
+
+* View receipt
+* Return summary
+* Future reservation link
+
+These options must remain secondary.
+
+---
+
+# Visual Hierarchy
+
+1. Illustration
+2. Heading
+3. Supporting copy
+4. Done button
+
+Nothing should compete with the feeling of completion.
+
+---
+
+# Interaction Rules
+
+Do not display inventory counts.
+
+Do not display operational details.
+
+Do not introduce new tasks.
+
+Allow the customer to leave with confidence.
+
+---
+
+# Screen States
+
+## Complete
+
+Display the completion experience.
+
+---
+
+## Error
+
+If completion cannot be confirmed:
+
+**We couldn't confirm your return.**
+
+Please contact Big W Events for assistance.
+
+Primary Action:
+
+**Contact Big W**
+
+---
+
+# Accessibility
+
+* Completion must be communicated through text as well as illustration.
+* The Done button should remain easy to reach with one hand.
+* Screen readers should announce that the return is complete.
+
+---
+
+# Engineering Notes
+
+The frontend displays confirmation only.
+
+The backend determines agreement completion.
+
+---
+
+# UX Objectives
+
+This screen should answer three questions.
+
+**Did everything get returned?**
+
+Yes.
+
+Everything has been returned.
+
+---
+
+**Is anything else required?**
+
+No.
+
+You're all finished.
+
+---
+
+**What should I do now?**
+
+Enjoy the rest of your day.
+
+---
+
+# Why This Screen Exists
+
+The final memory of a product often shapes how customers remember the entire experience.
+
+This screen exists to end the journey with the same calm confidence that defined it from the beginning.
+
+The customer should close the application thinking:
+
+> "Wow... that was easier than expected."
