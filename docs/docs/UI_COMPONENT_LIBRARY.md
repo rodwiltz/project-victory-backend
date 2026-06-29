@@ -12,6 +12,52 @@ Every component should reduce uncertainty, reinforce confidence, or guide the cu
 
 ---
 
+# Component Architecture
+The Big W Events customer experience is built from three reusable screen templates.
+
+## Template A — Introduction
+
+Components:
+
+- Experience Header
+- Primary Action
+
+Used by:
+
+- CS-01 Welcome
+- CS-02 Before You Begin
+
+---
+
+## Template B — Guided Work
+
+Components:
+
+- Experience Header
+- Guided Task Card
+- Camera Workspace
+- Status Message
+- Secondary Action
+
+Used by:
+
+- CS-03 Pick Up Your Rental
+- CS-05 Return Your Rental
+
+---
+
+## Template C — Completion
+
+Components:
+
+- Completion Panel
+- Primary Action
+
+Used by:
+
+- CS-04 Ready for Your Event
+- CS-06 Everything Returned
+
 ## Component Categories
 
 - Foundation Components
