@@ -243,3 +243,27 @@ Examples:
 
 When a component begins answering multiple unrelated questions, it should be divided into separate components.
 
+# DD-015 — Human Assistance Is the Exception
+
+**Decision**
+
+The application should be designed so that customers can successfully complete their rental without contacting Big W.
+
+Support Actions exist as a recovery path rather than part of the primary experience.
+
+**Reasoning**
+
+The software—not the employee—is the customer's primary guide.
+
+Every successful self-service interaction increases customer confidence while reducing operational interruptions.
+
+Human assistance should always remain available, but it should never become part of the expected workflow.
+
+Customers should leave thinking:
+
+> "Wow... that was easier than expected."
+
+Not:
+
+> "I'm glad someone answered the phone."
+
