@@ -106,3 +106,39 @@ The customer should focus on loading their rental, not operating software.
 **Reasoning**
 
 Technology should quietly support the task rather than become the task itself.
+
+# DD-008 — Build Patterns, Not Pages
+
+**Decision**
+
+The customer experience should be built from reusable interaction patterns rather than individually designed screens.
+
+New features should reuse existing templates, screen zones, and UI components whenever possible.
+
+**Reasoning**
+
+Customers build confidence by recognizing familiar interaction patterns.
+
+Consistent patterns reduce learning, lower cognitive load, and make future features feel immediately familiar.
+
+For Engineering, reusable patterns simplify implementation and reduce long-term maintenance.
+
+When introducing a new screen, the first question should be:
+
+> "Can this be built from an existing template?"
+
+Only when the answer is no should a new pattern be introduced.
+
+# DD-009 — One Primary Decision
+
+Decision
+
+Every customer screen should present at most one primary action.
+
+If a screen requires multiple equally prominent actions, the screen should be redesigned.
+
+Reasoning
+
+Every additional primary action creates another decision for the customer.
+
+Big W reduces uncertainty by presenting one clear next step.
