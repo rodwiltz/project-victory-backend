@@ -176,3 +176,19 @@ Celebration should mark a change in context rather than every incremental action
 The objective is not to celebrate progress.
 
 The objective is to help customers recognize that the nature of their work has changed.
+DD-011 — Name Components by Purpose
+
+Decision
+
+Components should be named after the customer outcome they create, not the UI element they resemble.
+
+Examples
+
+Experience Header (not Page Header)
+Focus Card (not Task Card)
+Camera Workspace (not Scanner)
+Completion Panel (not Success Screen)
+
+Reasoning
+
+Purpose-driven names help Design and Engineering think about customer outcomes instead of implementation details.
