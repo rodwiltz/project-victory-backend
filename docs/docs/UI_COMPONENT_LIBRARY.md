@@ -36,7 +36,7 @@ Components:
 - Experience Header
 - Focus Card
 - Camera Workspace
-- Status Message
+- Guidance Message
 - Support Actions
 
 Used by:
@@ -118,7 +118,7 @@ Feedback should be immediate, brief, and reassuring.
 
 **Contains**
 
-* Status Message
+* Guidance Message
 
 ---
 
