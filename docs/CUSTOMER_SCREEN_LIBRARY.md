@@ -512,3 +512,242 @@ The customer should leave this screen thinking:
 
 If that thought occurs before they press **Start Pickup**, this screen has achieved its purpose.
 # CS-02 — Pickup Overview
+---
+
+# CS-02 — Before You Begin
+
+**Journey Stage:** Pickup Invitation
+
+**Status:** Approved for Sprint 8
+
+---
+
+# Purpose
+
+The "Before You Begin" screen prepares the customer for the pickup experience.
+
+Rather than presenting reservation details or instructions, this screen establishes confidence by explaining what will happen over the next few minutes.
+
+The objective is to remove uncertainty before the customer begins interacting with their rental.
+
+This screen serves as the transition between opening the invitation and beginning the guided pickup.
+
+---
+
+# Customer Goal
+
+Understand what to expect before starting.
+
+---
+
+# Customer Mindset
+
+The customer has chosen to begin.
+
+They are no longer asking:
+
+*"Did I open the right link?"*
+
+Instead, they are wondering:
+
+* What am I about to do?
+* Will this be difficult?
+* How long will this take?
+* What happens if I make a mistake?
+
+This screen should answer those questions without overwhelming the customer.
+
+---
+
+# Success Criteria
+
+The customer understands the pickup process before scanning their first item.
+
+The customer selects **Continue** with confidence.
+
+---
+
+# Entry Conditions
+
+Customer selected **Start Pickup** on CS-01.
+
+The reservation has already been validated.
+
+---
+
+# Exit Conditions
+
+Customer selects **Continue**.
+
+System transitions to **CS-03 — Pick Up Your Rental**.
+
+---
+
+# Required Information
+
+## Illustration
+
+A calm illustration showing organized rental equipment waiting for pickup.
+
+The illustration should communicate preparation and readiness.
+
+Customers should immediately feel that everything is already organized for them.
+
+---
+
+## Heading
+
+Before You Begin
+
+---
+
+## Supporting Copy
+
+We'll guide you through picking up your rental.
+
+Scan each item as you load it.
+
+When everything is loaded, we'll let you know.
+
+---
+
+## Primary Action
+
+Continue
+
+---
+
+# Optional Information
+
+None.
+
+This screen intentionally avoids introducing reservation details, inventory information, or operational instructions.
+
+Reducing cognitive load is more valuable than displaying additional information.
+
+---
+
+# Visual Hierarchy
+
+1. Illustration
+2. Heading
+3. Three short instructional statements
+4. Primary action button
+
+The customer should read the screen in less than ten seconds.
+
+---
+
+# Components Used
+
+* Welcome Header
+* Illustration Panel
+* Primary Action Button
+
+---
+
+# Screen States
+
+## Loading
+
+Display the illustration area and heading placeholder while content loads.
+
+---
+
+## Ready
+
+Display the complete experience.
+
+---
+
+## Error
+
+If reservation data cannot be retrieved after validation:
+
+**We couldn't prepare your pickup.**
+
+Please contact Big W Events for assistance.
+
+Primary Action:
+
+**Contact Big W**
+
+---
+
+# Accessibility
+
+* Reading level should remain simple.
+* Each instructional statement should occupy its own line.
+* Illustration should include descriptive alternative text.
+* Continue button should remain visible without scrolling.
+* Support screen readers with logical heading order.
+
+---
+
+# Engineering Notes
+
+This screen contains no business logic.
+
+It is informational only.
+
+No customer decisions are recorded on this screen.
+
+Selecting **Continue** advances the customer to the guided pickup experience.
+
+---
+
+# Future Enhancements
+
+Future versions may optionally include:
+
+* Estimated completion time
+* Short animated illustration
+* Gate access reminder
+* Pickup safety reminder
+
+Any future enhancement must remain secondary to the primary objective of reducing customer uncertainty.
+
+---
+
+# UX Objectives
+
+This screen should answer three questions.
+
+**What am I about to do?**
+
+Pick up your rental one item at a time.
+
+---
+
+**Will someone tell me what to do?**
+
+Yes.
+
+Big W Events will guide you through every step.
+
+---
+
+**How will I know when I'm finished?**
+
+The application will automatically recognize when every required item has been picked up.
+
+---
+
+# Design Notes
+
+This screen intentionally avoids technical terminology.
+
+Do not mention:
+
+* QR Codes
+* Inventory
+* Item IDs
+* Backend processing
+* Agreements
+* Validation
+
+The customer should only think about one thing:
+
+> "This looks simple."
+
+If the customer reaches the next screen believing the process will be easy, this screen has fulfilled its purpose.
