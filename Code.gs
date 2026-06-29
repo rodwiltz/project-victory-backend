@@ -1,7 +1,8 @@
 function doGet() {
-  return ContentService
-    .createTextOutput("Project Victory Inventory Engine is running.")
-    .setMimeType(ContentService.MimeType.TEXT);
+  return HtmlService
+    .createTemplateFromFile("Index")
+    .evaluate()
+    .setTitle("Big W Events");
 }
 
 function doPost(e) {
@@ -54,4 +55,7 @@ function jsonResponse(payload) {
   return ContentService
     .createTextOutput(JSON.stringify(payload))
     .setMimeType(ContentService.MimeType.JSON);
+}
+function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
 }
