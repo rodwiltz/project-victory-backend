@@ -257,6 +257,145 @@ Enhancements should never change the structure or distract from the customer's t
 
 Customers should immediately feel that Big W Events is guiding them.
 
+---
+
+# BC-02 — Primary Action
+
+## Purpose
+
+The Primary Action represents the customer's next and most important decision.
+
+Its purpose is to move the customer confidently from one stage of the experience to the next.
+
+Every Primary Action should clearly communicate what happens next without requiring additional explanation.
+
+---
+
+## Used By
+
+**Template A — Introduction**
+
+* CS-01 — Welcome
+* CS-02 — Before You Begin
+
+**Template C — Completion**
+
+* CS-04 — Ready for Your Event
+* CS-06 — Everything Returned
+
+---
+
+## Template
+
+* Introduction
+* Completion
+
+---
+
+## Zone
+
+**Experience Zone**
+
+The Primary Action appears immediately after the Experience Header or Completion Panel.
+
+It should remain visually dominant.
+
+---
+
+## Behavior
+
+Only one Primary Action may appear on a screen.
+
+The button label should describe the customer's next step.
+
+Examples include:
+
+* Start Pickup
+* Continue
+* Done
+
+Primary Actions should never compete with other actions for attention.
+
+---
+
+## Variants
+
+### Start
+
+Begins an experience.
+
+Example:
+
+**Start Pickup**
+
+---
+
+### Continue
+
+Advances the customer to the next stage.
+
+Example:
+
+**Continue**
+
+---
+
+### Finish
+
+Closes the current experience.
+
+Example:
+
+**Done**
+
+---
+
+## Accessibility
+
+* Large touch target suitable for one-handed mobile use.
+* High color contrast.
+* Clear focus indicator for keyboard navigation.
+* Action text should always describe the outcome.
+
+---
+
+## Engineering Notes
+
+The Primary Action is a reusable presentation component.
+
+Engineering should pass:
+
+* Button label
+* Action handler
+* Enabled/disabled state
+
+Business logic determines availability.
+
+The component determines presentation.
+
+---
+
+## Future Enhancements
+
+Future versions may support:
+
+* Loading state
+* Subtle haptic confirmation
+* Gentle transition animation
+
+Enhancements should reinforce confidence without delaying the customer's progress.
+
+---
+
+## Why This Component Exists
+
+Customers should never wonder what to do next.
+
+The Primary Action provides one clear path forward.
+
+When present, it should always represent the single best next decision.
+
+
 The Experience Header creates that feeling before any work begins.
 
 Every customer journey starts with confidence.
