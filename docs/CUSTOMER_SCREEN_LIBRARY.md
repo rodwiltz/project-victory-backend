@@ -1065,3 +1065,199 @@ The application should quietly lead the customer from one completed task to the 
 
 If the customer completes pickup without ever wondering what to do next, this screen has fulfilled its purpose.
 
+---
+
+# CS-04 — Ready for Your Event
+
+**Journey Stage:** Pickup Complete
+
+**Status:** Approved for Sprint 8
+
+---
+
+# Purpose
+
+The "Ready for Your Event" screen confirms that pickup is complete.
+
+Its purpose is to reassure the customer that every assigned rental item has been loaded and that no further pickup action is required.
+
+This screen should feel calm, complete, and lightly celebratory.
+
+---
+
+# Customer Goal
+
+Know that pickup is finished.
+
+---
+
+# Customer Mindset
+
+The customer has finished loading their rental.
+
+They may be wondering:
+
+- Did I get everything?
+- Am I done?
+- What happens next?
+
+This screen should answer those questions immediately.
+
+---
+
+# Success Criteria
+
+The customer leaves the pickup experience confident that their rental is complete.
+
+---
+
+# Entry Conditions
+
+All assigned pickup items have been scanned.
+
+The backend confirms pickup completion.
+
+---
+
+# Exit Conditions
+
+Customer closes the experience or follows optional next-step guidance.
+
+---
+
+# Required Information
+
+## Illustration
+
+Display a simple Big W illustration showing the rental successfully loaded or ready for the event.
+
+---
+
+## Heading
+
+**Ready for Your Event**
+
+---
+
+## Supporting Copy
+
+Everything has been picked up.
+
+Enjoy your event.
+
+---
+
+# Primary Action
+
+Done
+
+---
+
+# Optional Information
+
+- Return reminder
+- Contact Big W
+- Pickup summary
+
+Optional information must remain secondary.
+
+---
+
+# Visual Hierarchy
+
+1. Illustration
+2. Heading
+3. Confirmation message
+4. Primary action
+5. Optional next-step guidance
+
+---
+
+# Interaction Rules
+
+Do not require the customer to confirm completion.
+
+Do not show detailed inventory counts.
+
+Do not introduce new tasks unless required.
+
+---
+
+# Screen States
+
+## Complete
+
+Display confirmation.
+
+---
+
+## Error
+
+If completion cannot be confirmed:
+
+**We couldn't confirm pickup.**
+
+Please contact Big W Events for assistance.
+
+Primary Action:
+
+**Contact Big W**
+
+---
+
+# Accessibility
+
+- Confirmation must be text-based, not illustration-only.
+- Primary action should be easy to reach.
+- Screen reader should announce pickup completion.
+
+---
+
+# Engineering Notes
+
+The frontend does not determine pickup completion.
+
+Completion is confirmed by the backend before this screen appears.
+
+---
+
+# Future Enhancements
+
+Future versions may include:
+
+- Return reminder timing
+- Calendar reminder
+- Rental care instructions
+- Event-day support link
+
+---
+
+# UX Objectives
+
+This screen should answer three questions.
+
+**Did I get everything?**
+
+Yes. Everything has been picked up.
+
+---
+
+**Am I done?**
+
+Yes. No further pickup action is required.
+
+---
+
+**What happens next?**
+
+Enjoy your event. Big W will guide the return later.
+
+---
+
+# Why This Screen Exists
+
+This screen exists to close the pickup experience with confidence.
+
+The customer should leave thinking:
+
+> "That was easier than expected."
