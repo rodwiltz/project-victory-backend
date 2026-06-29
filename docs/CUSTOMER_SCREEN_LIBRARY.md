@@ -511,3 +511,4 @@ The customer should leave this screen thinking:
 > "Okay... this looks easy."
 
 If that thought occurs before they press **Start Pickup**, this screen has achieved its purpose.
+# CS-02 — Pickup Overview
