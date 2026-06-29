@@ -66,6 +66,76 @@ Used by:
 
 # Screen Zones
 ---
+## Experience Zone
+
+**Purpose**
+
+The Experience Zone introduces the current customer moment.
+
+Its responsibility is to create confidence before the customer takes action.
+
+**Contains**
+
+* Experience Header
+
+---
+
+## Work Zone
+
+**Purpose**
+
+The Work Zone presents the customer's current objective.
+
+Only the information required to complete the next task should appear here.
+
+**Contains**
+
+* Guided Task Card
+
+---
+
+## Interaction Zone
+
+**Purpose**
+
+The Interaction Zone is where customers perform work.
+
+Components in this zone should always support the current task without introducing unnecessary decisions.
+
+**Contains**
+
+* Camera Workspace
+
+---
+
+## Feedback Zone
+
+**Purpose**
+
+The Feedback Zone communicates the system's response to customer actions.
+
+Feedback should be immediate, brief, and reassuring.
+
+**Contains**
+
+* Status Message
+
+---
+
+## Support Zone
+
+**Purpose**
+
+The Support Zone provides optional assistance without interrupting the customer's workflow.
+
+Support should always remain secondary to the customer's current task.
+
+**Contains**
+
+* Secondary Action
+* Contact Big W
+* Need Help
+
 
 # BC-01 — Experience Header
 
