@@ -37,7 +37,7 @@ Components:
 - Focus Card
 - Camera Workspace
 - Status Message
-- Secondary Action
+- Support Actions
 
 Used by:
 
@@ -132,7 +132,7 @@ Support should always remain secondary to the customer's current task.
 
 **Contains**
 
-* Secondary Action
+* Support Actions
 * Contact Big W
 * Need Help
 
