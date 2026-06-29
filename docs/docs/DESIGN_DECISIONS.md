@@ -263,6 +263,138 @@ Customers should leave thinking:
 
 > "Wow... that was easier than expected."
 
+# DD-016 — Recover Before Escalating
+
+**Decision**
+
+The application should always attempt to recover from recoverable problems before directing the customer to contact Big W.
+
+Human assistance is the final recovery layer—not the first.
+
+**Reasoning**
+
+The software often knows why a problem occurred before the customer does.
+
+When possible, the application should diagnose the issue, provide clear guidance, and allow the customer to immediately try again.
+
+Examples include:
+
+* Camera permissions denied
+* Camera initialization failed
+* QR code not recognized
+* Poor lighting
+* Temporary network interruptions
+
+Only after reasonable recovery attempts have failed should the application recommend contacting Big W.
+
+---
+
+## Recovery Model
+
+Every problem should follow this sequence:
+
+### 1. Detect
+
+Identify the specific failure.
+
+Example:
+
+> Camera permission denied.
+
+---
+
+### 2. Recover
+
+Provide the customer with the simplest action that is most likely to resolve the problem.
+
+Example:
+
+> Please allow camera access and tap **Try Again**.
+
+---
+
+### 3. Retry
+
+Allow the customer to immediately continue without restarting the experience.
+
+Recovery should feel like a brief interruption—not a failed session.
+
+---
+
+### 4. Escalate
+
+If recovery is unsuccessful, provide access to Support Actions.
+
+When escalating, the application should include as much context as possible so Big W understands the customer's situation before the conversation begins.
+
+---
+
+## Design Principles
+
+Recovery should:
+
+* Preserve customer confidence.
+* Minimize interruption.
+* Keep the customer inside the guided experience whenever possible.
+* Prefer action over explanation.
+* Make human assistance the exception rather than the expectation.
+
+---
+
+## Examples
+
+### Camera Permission Denied
+
+Show:
+
+> We need permission to use your camera.
+
+Primary Action:
+
+**Try Again**
+
+Secondary Action:
+
+**Need Help?**
+
+---
+
+### QR Code Not Recognized
+
+Show:
+
+> Try moving closer or improving the lighting.
+
+Continue scanning automatically.
+
+No escalation.
+
+---
+
+### Missing Inventory
+
+The software cannot recover.
+
+Offer:
+
+**Need Help?**
+
+Include the rental and item context when initiating contact.
+
+---
+
+## Why This Decision Exists
+
+Every unnecessary support interaction increases customer frustration and operational effort.
+
+Big W's software should behave like an experienced employee:
+
+Solve what it can.
+
+Guide when it cannot.
+
+Escalate only when necessary.
+
 Not:
 
 > "I'm glad someone answered the phone."
