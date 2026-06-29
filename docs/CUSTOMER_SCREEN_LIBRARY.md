@@ -250,7 +250,6 @@ Each specification follows a standardized format to ensure Engineering can imple
 ---
 # Detailed Screen Specifications
 
-> Placeholder for Sprint 8 customer screen specifications.
 
 ---
 
