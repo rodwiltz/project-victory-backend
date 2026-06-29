@@ -65,3 +65,128 @@ Used by:
 - Feedback Components
 
 # Screen Zones
+---
+
+# BC-01 — Experience Header
+
+## Purpose
+
+The Experience Header establishes confidence before the customer takes action.
+
+It introduces the current moment in the customer journey using a consistent combination of illustration, heading, and supporting copy.
+
+The Experience Header should help customers immediately understand where they are and what they are about to do.
+
+Its primary responsibility is reassurance—not navigation.
+
+---
+
+## Used By
+
+**Template A — Introduction**
+
+* CS-01 — Welcome
+* CS-02 — Before You Begin
+
+**Template B — Guided Work**
+
+* CS-03 — Pick Up Your Rental
+* CS-05 — Return Your Rental
+
+---
+
+## Template
+
+* Introduction
+* Guided Work
+
+---
+
+## Zone
+
+**Experience Zone**
+
+The Experience Header always occupies the Experience Zone at the top of the screen.
+
+No other component may appear above it.
+
+---
+
+## Behavior
+
+The Experience Header always contains three elements:
+
+1. Illustration
+2. Heading
+3. Supporting Copy
+
+The component does not contain buttons, progress indicators, or customer actions.
+
+Supporting copy should remain brief and reinforce the customer's next step without repeating information displayed elsewhere.
+
+---
+
+## Variants
+
+### Welcome
+
+Used when introducing the experience.
+
+### Preparation
+
+Used before beginning a guided workflow.
+
+### Guided Work
+
+Used while the customer is actively completing a task.
+
+The structure remains identical across all variants.
+
+Only the content changes.
+
+---
+
+## Accessibility
+
+* The heading must use semantic heading structure.
+* Illustrations must include descriptive alternative text.
+* Supporting copy should remain readable at common mobile text sizes.
+* Color must never be the only method of communicating meaning.
+
+---
+
+## Engineering Notes
+
+The Experience Header is a reusable presentation component.
+
+Business logic should never determine its layout.
+
+Engineering should pass:
+
+* Illustration
+* Heading
+* Supporting copy
+
+The component should render them consistently across all supported screens.
+
+---
+
+## Future Enhancements
+
+Future versions may support:
+
+* Seasonal illustrations
+* Light animation
+* Brand campaigns
+
+Enhancements should never change the structure or distract from the customer's task.
+
+---
+
+## Why This Component Exists
+
+Customers should immediately feel that Big W Events is guiding them.
+
+The Experience Header creates that feeling before any work begins.
+
+Every customer journey starts with confidence.
