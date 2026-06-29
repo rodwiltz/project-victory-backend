@@ -399,3 +399,26 @@ Not:
 
 > "I'm glad someone answered the phone."
 
+# DD-017 — Every Interface Element Should Guide a Decision
+
+**Decision**
+
+Every visible interface element should help the customer make, confirm, or avoid a decision.
+
+Elements that communicate information without helping the customer move forward should be reconsidered or removed.
+
+**Reasoning**
+
+Big W software exists to guide customers through a successful rental experience.
+
+Every component should reduce uncertainty by answering a meaningful question or directing the customer's next action.
+
+Examples:
+
+* Experience Header answers: "Where am I?"
+* Focus Card answers: "What should I do?"
+* Guidance Message answers: "What should I understand right now?"
+* Primary Action answers: "What happens next?"
+
+If an element cannot clearly explain how it helps guide the customer, it likely does not belong in the interface.
+
