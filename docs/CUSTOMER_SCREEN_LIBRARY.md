@@ -248,3 +248,6 @@ The following sections define every customer-facing screen in detail.
 Each specification follows a standardized format to ensure Engineering can implement every screen consistently.
 
 ---
+# Detailed Screen Specifications
+
+> Placeholder for Sprint 8 customer screen specifications.
