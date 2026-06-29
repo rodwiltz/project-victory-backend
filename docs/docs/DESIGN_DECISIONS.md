@@ -142,3 +142,37 @@ Reasoning
 Every additional primary action creates another decision for the customer.
 
 Big W reduces uncertainty by presenting one clear next step.
+
+# DD-010 — Celebrate Transitions, Not Progress
+
+**Decision**
+
+Use subtle positive feedback when the customer's task changes—not after every successful action.
+
+**Reasoning**
+
+Repeated confirmations quickly become background noise.
+
+Meaningful transitions deserve slightly greater emphasis because they naturally re-engage the customer's attention and prepare them for the next task.
+
+Celebration should mark a change in context rather than every incremental action.
+
+---
+
+## Examples
+
+### Appropriate
+
+* Final table scanned
+* Transition from Tables to Chairs
+* Transition from Chairs to Linens
+
+### Not Appropriate
+
+* Every successful scan
+* Every quantity update
+* Every camera recognition
+
+The objective is not to celebrate progress.
+
+The objective is to help customers recognize that the nature of their work has changed.
