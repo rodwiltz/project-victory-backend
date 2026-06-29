@@ -252,3 +252,262 @@ Each specification follows a standardized format to ensure Engineering can imple
 
 > Placeholder for Sprint 8 customer screen specifications.
 
+---
+
+# CS-01 — Welcome
+
+**Journey Stage:** Pickup Invitation
+
+**Status:** Approved for Sprint 8
+
+---
+
+# Purpose
+
+The Welcome screen introduces the customer to the Big W Events self-service pickup experience.
+
+Its purpose is to establish confidence before any rental activity begins.
+
+The screen should reassure first-time customers that they are in the right place and that Big W Events will guide them through the remainder of the pickup process.
+
+This screen intentionally contains very little information.
+
+Reducing cognitive load at the beginning of the experience is more valuable than presenting additional details.
+
+---
+
+# Customer Goal
+
+Begin the pickup experience confidently.
+
+---
+
+# Customer Mindset
+
+The customer has just opened their personalized pickup invitation.
+
+They may be wondering:
+
+* Did I open the correct link?
+* Am I in the right place?
+* What happens next?
+* Is this going to be complicated?
+
+This screen should immediately reduce those concerns.
+
+---
+
+# Success Criteria
+
+The customer confidently selects **Start Pickup** without hesitation.
+
+The customer understands that Big W Events will guide them through the process.
+
+---
+
+# Entry Conditions
+
+Customer opens their secure personalized pickup invitation.
+
+The invitation uniquely identifies the rental.
+
+No additional identity verification is required during Sprint 8.
+
+---
+
+# Exit Conditions
+
+Customer selects **Start Pickup**.
+
+System transitions to **CS-02 — Pickup Overview**.
+
+---
+
+# Required Information
+
+## Illustration
+
+A calm, professional illustration using the Big W illustration style.
+
+Preferred illustration:
+
+Shield with subtle confirmation accent.
+
+Purpose:
+
+Communicate confidence and reassurance.
+
+---
+
+## Heading
+
+Welcome to Big W Events
+
+---
+
+## Supporting Copy
+
+Ready to pick up your rental?
+
+---
+
+## Primary Action
+
+Start Pickup
+
+---
+
+# Optional Information
+
+The following information may be displayed if available.
+
+* Pickup date
+* Pickup location
+* Pickup window
+
+These details should remain visually secondary.
+
+---
+
+# Visual Hierarchy
+
+1. Illustration
+2. Heading
+3. Supporting copy
+4. Primary action button
+5. Optional pickup information
+
+The customer's attention should naturally flow downward.
+
+---
+
+# Components Used
+
+* Welcome Header
+* Illustration Panel
+* Primary Action Button
+
+---
+
+# Screen States
+
+## Loading
+
+Display application branding while reservation information loads.
+
+Avoid exposing technical loading indicators whenever possible.
+
+---
+
+## Ready
+
+Display the complete Welcome experience.
+
+---
+
+## Invalid Invitation
+
+Display:
+
+**This invitation is no longer available.**
+
+Supporting text:
+
+Please contact Big W Events if you need assistance.
+
+Primary Action:
+
+Contact Big W
+
+---
+
+## Expired Invitation
+
+Display:
+
+**This invitation has expired.**
+
+Supporting text:
+
+Please contact Big W Events for assistance.
+
+Primary Action:
+
+Contact Big W
+
+---
+
+# Accessibility
+
+* Large touch targets.
+* High contrast text.
+* Screen reader friendly heading structure.
+* Illustration should include descriptive alternative text.
+* Primary button should remain reachable with one-handed mobile use.
+
+---
+
+# Engineering Notes
+
+The Welcome screen contains no business logic.
+
+Its responsibility is presentation.
+
+Reservation validation occurs before this screen is displayed.
+
+Business logic remains entirely within the backend.
+
+---
+
+# Future Enhancements
+
+Future versions may optionally display:
+
+* Navigation to pickup location
+* Weather information
+* Gate access reminders
+* Estimated pickup duration
+* Rental preview illustration
+
+These enhancements should never distract from the primary action.
+
+---
+
+# UX Objectives
+
+This screen should answer three questions immediately.
+
+**Where am I?**
+
+You are beginning your Big W Events pickup.
+
+---
+
+**What should I do next?**
+
+Select **Start Pickup**.
+
+---
+
+**How will I know I'm finished?**
+
+Big W Events will guide you through every remaining step.
+
+---
+
+# Design Notes
+
+The Welcome screen establishes the emotional tone for the entire application.
+
+It should feel:
+
+* Professional
+* Calm
+* Organized
+* Reassuring
+
+The customer should leave this screen thinking:
+
+> "Okay... this looks easy."
+
+If that thought occurs before they press **Start Pickup**, this screen has achieved its purpose.
