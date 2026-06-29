@@ -311,7 +311,7 @@ No additional identity verification is required during Sprint 8.
 
 Customer selects **Start Pickup**.
 
-System transitions to **CS-02 — Pickup Overview**.
+System transitions to # CS-02 — Before You Begin
 
 ---
 
