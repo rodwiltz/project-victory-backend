@@ -1114,3 +1114,136 @@ Customers should never need to interpret the software.
 The software should interpret the situation for them.
 
 Guidance Messages quietly explain what matters at exactly the moment it matters, allowing customers to remain focused on completing their rental with confidence.
+# BC-07 — Completion Panel
+
+## Purpose
+
+The Completion Panel provides a clear, reassuring conclusion to a customer experience.
+
+Its purpose is to remove uncertainty by confirming that the current experience has been successfully completed and that no additional customer action is required.
+
+Completion should feel calm, confident, and final.
+
+---
+
+## Used By
+
+**Template C — Completion**
+
+* CS-04 — Ready for Your Event
+* CS-06 — Everything Returned
+
+---
+
+## Template
+
+**Completion**
+
+---
+
+## Zone
+
+**Completion Zone**
+
+The Completion Panel is the primary element of the Completion template.
+
+No other component should compete with it for the customer's attention.
+
+---
+
+## Behavior
+
+The Completion Panel appears only after the application has confirmed that all required work has been successfully completed.
+
+The panel should clearly communicate:
+
+* The experience is complete.
+* No additional action is required.
+* The customer may confidently leave the experience.
+
+---
+
+## Completion Types
+
+### Pickup Complete
+
+Example:
+
+**Your rental is ready.**
+
+Have a great event!
+
+---
+
+### Return Complete
+
+Example:
+
+**Everything has been returned.**
+
+Thank you for choosing Big W Events.
+
+---
+
+## Attention Model
+
+The Completion Panel intentionally slows the experience.
+
+Unlike the Focus Card, which directs action, the Completion Panel removes the need for action.
+
+Its purpose is to replace activity with certainty.
+
+---
+
+## Accessibility
+
+* High contrast.
+* Simple language.
+* Screen reader announcement when displayed.
+* No automatic dismissal.
+* Clear keyboard focus.
+
+---
+
+## Engineering Notes
+
+The backend determines when completion criteria have been satisfied.
+
+The frontend is responsible for presenting the completion state.
+
+The Completion Panel should never determine whether work is complete.
+
+---
+
+## Future Enhancements
+
+Future versions may support:
+
+* Personalized thank-you messages
+* Event reminders
+* Optional post-rental feedback
+* Loyalty and referral experiences
+
+Future enhancements should never distract from confirming completion.
+
+---
+
+## UX Objectives
+
+The Completion Panel answers one question.
+
+**Am I finished?**
+
+The customer should never leave wondering whether another step remains.
+
+---
+
+## Why This Component Exists
+
+Every guided experience deserves a clear ending.
+
+The Completion Panel gives customers confidence that they have successfully completed their pickup or return and can leave knowing Big W has everything it needs.
+
+Completion is not a celebration.
+
+It is certainty.
