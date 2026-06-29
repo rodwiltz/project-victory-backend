@@ -126,23 +126,19 @@ Pickup Invitation Sent
         │
 Welcome
         │
-Identity Verification
+Before You Begin
         │
-Pickup Dashboard
+Pick Up Your Rental
         │
-Guided Pickup
-        │
-Pickup Complete
+Ready for Your Event
         │
 Event Happens
         │
 Return Invitation Sent
         │
-Return Dashboard
+Return Your Rental
         │
-Guided Return
-        │
-Return Complete
+Everything Returned
         │
 Agreement Closed
 ```
@@ -153,17 +149,14 @@ No customer-facing screen should exist outside this journey without product appr
 
 # Screen Catalog
 
-| ID   | Screen                | Journey Stage         |
-| ---- | --------------------- | --------------------- |
-| S-01 | Welcome               | Pickup Invitation     |
-| S-02 | Identity Verification | Identity Verification |
-| S-03 | Pickup Dashboard      | Guided Pickup         |
-| S-04 | Pickup Scanner        | Guided Pickup         |
-| S-05 | Pickup Complete       | Rental Complete       |
-| S-06 | Return Dashboard      | Return Invitation     |
-| S-07 | Return Scanner        | Guided Return         |
-| S-08 | Return Complete       | Agreement Closed      |
-
+| ID | Screen | Journey Stage |
+|-----|---------------------------|---------------------------|
+| CS-01 | Welcome | Pickup Invitation |
+| CS-02 | Before You Begin | Guided Pickup |
+| CS-03 | Pick Up Your Rental | Guided Pickup |
+| CS-04 | Ready for Your Event | Pickup Complete |
+| CS-05 | Return Your Rental | Return Invitation |
+| CS-06 | Everything Returned | Agreement Closed |
 ---
 
 # Global Navigation Rules
