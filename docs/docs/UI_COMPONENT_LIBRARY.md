@@ -807,3 +807,134 @@ The customer should never wonder whether the system recognized their scan.
 The Camera Workspace quietly confirms each interaction while allowing the customer to remain focused on loading or returning rental items.
 
 It exists to make scanning feel reliable, predictable, and nearly invisible.
+---
+
+# BC-03 — Support Actions
+
+## Purpose
+
+Support Actions provide the customer with a clear path to human assistance when the application cannot reasonably recover from a problem.
+
+Support Actions are intentionally absent from the normal guided experience.
+
+Their presence indicates that the application has exhausted its available recovery strategies.
+
+---
+
+## Used By
+
+Recovery states across all customer-facing templates.
+
+Support Actions are not tied to a specific screen.
+
+They are displayed only when recovery is unsuccessful or when the application encounters a non-recoverable condition.
+
+---
+
+## Zone
+
+**Support Zone**
+
+The Support Zone appears only during recovery experiences.
+
+It should never compete visually with the Primary Action during normal workflow.
+
+---
+
+## Behavior
+
+Support Actions remain hidden during successful customer experiences.
+
+They become available only after:
+
+* Automatic recovery fails
+* Guided recovery fails
+* A non-recoverable operational issue is detected
+
+Examples include:
+
+* Missing inventory
+* Storage access problems
+* Repeated recovery failures
+* Unexpected system errors
+
+---
+
+## Available Actions
+
+Primary support option:
+
+**Need Help?**
+
+Selecting the action begins the Big W support experience.
+
+Whenever possible, the application should include relevant context before initiating customer contact.
+
+---
+
+## Attention Model
+
+Support Actions intentionally remain outside the customer's normal attention.
+
+The application should first:
+
+1. Detect
+2. Recover
+3. Guide
+
+Only then should Support Actions become visible.
+
+This preserves the customer's confidence in the guided experience while ensuring assistance remains available when genuinely needed.
+
+---
+
+## Accessibility
+
+* Easily discoverable when displayed.
+* Large touch target.
+* Clear screen reader label.
+* Never rely solely on color to indicate availability.
+
+---
+
+## Engineering Notes
+
+Support Actions are state-driven.
+
+Visibility is controlled by application state rather than individual screens.
+
+The backend or workflow engine determines when recovery has failed.
+
+The frontend is responsible only for rendering the component when requested.
+
+---
+
+## Future Enhancements
+
+Future versions may support:
+
+* Pre-filled support messages
+* Automatic diagnostic information
+* Screenshot attachment
+* Messenger integration
+* Live support availability indicators
+
+Future enhancements should reduce customer effort without increasing operational complexity.
+
+---
+
+## UX Objectives
+
+Support Actions answer one question.
+
+**What do I do if the software cannot help me?**
+
+The answer should always be immediate, simple, and reassuring.
+
+---
+
+## Why This Component Exists
+
+Big W believes software should solve problems before people do.
+
+Support Actions exist to ensure that when human assistance becomes necessary, customers always know the next step.
