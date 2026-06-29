@@ -17,6 +17,11 @@
     <input id="agreement" placeholder="Agreement / Order Number" style="width:90%;padding:14px;margin:8px;font-size:16px;">
     <input id="customer" placeholder="Customer Name Optional" style="width:90%;padding:14px;margin:8px;font-size:16px;">
     <button onclick="continueToCamera()" style="width:90%;padding:14px;margin:8px;font-size:16px;">Continue</button>
+
+<button onclick="showOperationsConsole()" style="width:90%;padding:14px;margin:8px;font-size:16px;background:#111;color:white;">
+  Customer Journey Preview
+</button>
+
   </div>
 
   <div id="cameraIntro" style="display:none;">
@@ -41,8 +46,66 @@
     <h2><span id="finalCount">0</span> Items</h2>
   </div>
 
+<div id="operationsConsole" style="display:none;text-align:left;">
+
+  <h2 style="text-align:center;margin-bottom:4px;">Big W Events</h2>
+  <p style="text-align:center;margin-top:0;font-weight:bold;letter-spacing:1px;">CHECKOUT</p>
+
+  <div style="font-size:14px;margin-bottom:14px;text-align:center;">
+    <strong>BW-TEST-0001</strong><br>
+    John Smith
+  </div>
+
+  <div style="background:#111;color:white;border-radius:12px;padding:12px;margin-bottom:12px;">
+    <div style="font-size:12px;opacity:.75;">NEXT</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:bold;">
+      <span>Chairs</span>
+      <span>6</span>
+    </div>
+  </div>
+
+  <div style="font-weight:bold;margin-bottom:6px;">TO DO</div>
+
+  <div style="display:grid;grid-template-columns:80px 1fr 35px;gap:8px;align-items:center;margin-bottom:10px;">
+    <span>Chairs</span>
+    <div style="height:10px;background:#ddd;border-radius:99px;overflow:hidden;">
+      <div style="height:100%;width:86%;background:#111;"></div>
+    </div>
+    <strong>6</strong>
+  </div>
+
+  <div style="display:grid;grid-template-columns:80px 1fr 35px;gap:8px;align-items:center;margin-bottom:10px;">
+    <span>Linens</span>
+    <div style="height:10px;background:#ddd;border-radius:99px;overflow:hidden;">
+      <div style="height:100%;width:67%;background:#111;"></div>
+    </div>
+    <strong>2</strong>
+  </div>
+
+  <div style="font-weight:bold;margin:14px 0 6px;">DONE</div>
+
+  <div style="display:flex;justify-content:space-between;margin-bottom:14px;">
+    <span>Tables</span>
+    <strong>✓</strong>
+  </div>
+
+  <div style="background:#f4f6f8;border-radius:12px;padding:12px;text-align:center;margin-bottom:12px;">
+    <div style="font-size:12px;color:#666;">Last Scan</div>
+    <strong>✓ WFC12 loaded</strong>
+  </div>
+
+  <div style="border:2px dashed #bbb;border-radius:12px;padding:24px;text-align:center;color:#666;">
+    Camera / Scanner
+  </div>
+
+  <button onclick="show('start')" style="width:100%;padding:14px;margin-top:14px;font-size:16px;">
+    Back
+  </button>
+
 </div>
 
+</div>
+<?!= include('Journey'); ?>
 <script>
 let agreement = "";
 let customer = "";
@@ -52,11 +115,13 @@ let scanned = new Set();
 let saving = false;
 
 function show(id) {
-  ["start", "cameraIntro", "scannerArea", "done"].forEach(function(x) {
+  ["start", "cameraIntro", "scannerArea", "done", "operationsConsole"].forEach(function(x) {
     document.getElementById(x).style.display = x === id ? "block" : "none";
   });
 }
-
+function showOperationsConsole() {
+  show("operationsConsole");
+}
 function continueToCamera() {
   agreement = document.getElementById("agreement").value.trim();
   customer = document.getElementById("customer").value.trim();
